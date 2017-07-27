@@ -1,0 +1,107 @@
+% Turn off page numbering
+\setuppagenumbering[location=]
+
+
+\setuplayout
+  [header=0pt,
+   margin=0pt,
+   footerdistance=0cm,
+   topspace=1cm,
+   backspace=1cm,
+   width=fit,
+   % margin bottom of text to paper
+   height=\dimexpr
+    \paperheight-\topspace+\footerheight+\footerdistance-5cm\relax]
+
+% Configure section headers
+\setuphead[subject][
+    after={\hrule \blank[small]},
+    style=bold]
+
+% Configure itemize
+\setupitemize[1][packed][
+    leftmargin=1cm,
+    symbol=2]
+
+
+\starttext
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% General Information %
+%%%%%%%%%%%%%%%%%%%%%%%
+\starttitle[title=Bryce Kellogg]
+(425)-275-8979 \|
+kelloggbryce@gmail.com
+\stoptitle
+
+%%%%%%%%%%%%%
+% Education %
+%%%%%%%%%%%%%
+\startsubject[title=Education]
+
+{\bf University of Washinton} \hfill Seattle, WA
+\startitemize
+    \item {\it Masters of Science, Electrical Engineering} \hfill June 2016
+
+    \item {\it Bachelors of Science, Computer Engineering} \hfill June 2013
+
+    \item {\it Bachelors of Science, Electrical Engineering} \hfill June 2013
+\stopitemize
+
+\stopsubject
+
+%%%%%%%%%%%%%%%%%%%
+% Work Experience %
+%%%%%%%%%%%%%%%%%%%
+\startsubject[title=Experience]
+
+% Jeeva
+{\bf Jeeva Wireless} \hfill March 2015 - Current
+
+{\it Startup doing some cool stuff}
+
+{\bf Chief Engineer}
+\startitemize
+    \item Designed products
+    \item FPGA implementation stuff
+    \item AWS Cloud Computing stuff
+\stopitemize
+
+% UW Grad Student
+{\bf UW Mobile Systems Lab} \hfill June 2013 - May 2017
+
+{\it Does stuff with wireless power, low power communication}
+
+{\bf Graduate Researcher}
+\startitemize
+    \item Lead projects with undergrads
+    \item Hacked the Linux Kernel
+    \item Implemented Wi-Fi protocol
+    \item Wrote ultra-low power code
+\stopitemize
+
+% Xilinx Intern
+{\bf Xilinx Inc.} \hfill August 2011 - August 2012
+
+{\it Largest FPGA Manufacturer in the world}
+
+{\bf Test and Validation Intern}
+\startitemize
+    \item Developed and deployed unit tests and testing frameworks for Xilinx's new Zynq platform.
+    \item Wrote Verilog unit tests for FPGA fabric
+    \item Debugged ARM microcontroller peripheral issues
+    \item Wrote Linux Kernel drivers 
+\stopitemize
+
+
+\stopsubject
+
+%%%%%%%%%%
+% Skills %
+%%%%%%%%%%%
+\startsubject[title=Skills]
+
+\stopsubject
+
+\stoptext
+
