@@ -1,6 +1,14 @@
+% Set up Font
+\definefallbackfamily [mainface] [rm] [Noto Emoji] [range={miscellaneoussymbols,dingbats,miscellaneoussymbolsandpictographs}]
+\definefontfamily     [mainface] [rm] [LM Roman 10]
+\setupbodyfont        [mainface]
+\enabletrackers[fonts.missing]
+
+% Enable X11 Colors
+\usecolors[xwi]
+
 % Turn off page numbering
 \setuppagenumbering[location=]
-
 
 \setuplayout
   [header=0pt,
@@ -13,15 +21,28 @@
    height=\dimexpr
     \paperheight-\topspace+\footerheight+\footerdistance-5cm\relax]
 
+% Configure title
+\setuphead[title][
+    align=center,
+    after={\blank[0cm]},
+    color=steelblue]
+
 % Configure section headers
 \setuphead[subject][
     after={\hrule \blank[small]},
+    style=bold,
+    color=steelblue]
+
+\setuphead[subsubject][
+    after={\blank[none]},
+    before={\blank[medium]},
     style=bold]
 
 % Configure itemize
 \setupitemize[1][packed][
-    leftmargin=1cm,
-    symbol=2]
+    before={\blank[none]},
+    leftmargin=0.7cm,
+    symbol=2]  % symbol 2 or 5
 
 
 \starttext
@@ -30,76 +51,142 @@
 % General Information %
 %%%%%%%%%%%%%%%%%%%%%%%
 \starttitle[title=Bryce Kellogg]
-(425)-275-8979 \|
-kelloggbryce@gmail.com
+\startalignment[middle]
+
+%TODO: hfill but with big margins
+
+\utfchar{"1F4F1} (425) 275-8979 \| \utfchar{"2709} kelloggbryce@gmail.com
+
+\stopalignment
 \stoptitle
 
 %%%%%%%%%%%%%
 % Education %
 %%%%%%%%%%%%%
-\startsubject[title=Education]
+\startsubject[title=EDUCATION]
 
-{\bf University of Washinton} \hfill Seattle, WA
-\startitemize
-    \item {\it Masters of Science, Electrical Engineering} \hfill June 2016
+    {\bf University of Washington}
 
-    \item {\it Bachelors of Science, Computer Engineering} \hfill June 2013
-
-    \item {\it Bachelors of Science, Electrical Engineering} \hfill June 2013
+\startitemize[symbol=0,leftmargin=0.5cm]
+    \item Master's of Science in Electrical Engineering   \hfill GPA: 3.84  \hfill June 2016
+    \item Bachelor's of Science in Electrical Engineering \hfill GPA: 3.86  \hfill June 2013
+    \item Bachelor's of Science in Computer Engineering   \hfill GPA: 3.86  \hfill June 2013
 \stopitemize
 
+\stopsubsubsubject
 \stopsubject
 
 %%%%%%%%%%%%%%%%%%%
 % Work Experience %
 %%%%%%%%%%%%%%%%%%%
-\startsubject[title=Experience]
+\startsubject[title=INDUSTRY EXPERIENCE]
 
-% Jeeva
-{\bf Jeeva Wireless} \hfill March 2015 - Current
 
-{\it Startup doing some cool stuff}
+    % Jeeva
+    \startsubsubject[title={Jeeva Wireless \hfill {\small March 2015 - Current}}]
 
-{\bf Chief Engineer}
-\startitemize
-    \item Designed products
-    \item FPGA implementation stuff
-    \item AWS Cloud Computing stuff
-\stopitemize
+        {\it Startup reimagining connectivity for ultra-low power IoT}
 
-% UW Grad Student
-{\bf UW Mobile Systems Lab} \hfill June 2013 - May 2017
+        {\bf Director of Engineering & Co-Founder }
+        \startitemize
+            \item Designed products
+            \item FPGA implementation stuff
+            \item AWS Cloud Computing stuff
+        \stopitemize
 
-{\it Does stuff with wireless power, low power communication}
+    \stopsubsubject
 
-{\bf Graduate Researcher}
-\startitemize
-    \item Lead projects with undergrads
-    \item Hacked the Linux Kernel
-    \item Implemented Wi-Fi protocol
-    \item Wrote ultra-low power code
-\stopitemize
 
-% Xilinx Intern
-{\bf Xilinx Inc.} \hfill August 2011 - August 2012
+    % UW Grad Student
+    \startsubsubject[title={UW Mobile Systems Lab \hfill {\small June 2013 - May 2017}}]
 
-{\it Largest FPGA Manufacturer in the world}
+        {\it Does stuff with wireless power, low power communication}
 
-{\bf Test and Validation Intern}
-\startitemize
-    \item Developed and deployed unit tests and testing frameworks for Xilinx's new Zynq platform.
-    \item Wrote Verilog unit tests for FPGA fabric
-    \item Debugged ARM microcontroller peripheral issues
-    \item Wrote Linux Kernel drivers 
-\stopitemize
+        {\bf Graduate Researcher}
+        \startitemize
+            \item Lead projects with undergrads
+            \item Hacked the Linux Kernel
+            \item Implemented Wi-Fi protocol
+            \item Wrote ultra-low power code
+        \stopitemize
 
+    \stopsubsubject
+
+    % Xilinx Intern
+    \startsubsubject[title={Xilinx Inc. \hfill {\small August 2011 - August 2012}}]
+
+        {\it Largest FPGA Manufacturer in the world}
+
+        {\bf Test and Validation Intern}
+        \startitemize
+            \item Developed Linux kernel device drivers for ARM peripherals.
+            \item Designed and deployed unit test and continuous integration framework ARM/FPGA platform.
+            \item Wrote Verilog unit tests for FPGA fabric
+            \item Debugged ARM microcontroller peripheral issues
+        \stopitemize
+
+    \stopsubsubject
 
 \stopsubject
 
 %%%%%%%%%%
 % Skills %
 %%%%%%%%%%%
-\startsubject[title=Skills]
+\startsubject[title=TECHNICAL SKILLS]
+
+    \startitemize[columns,three]
+        \item C/C++
+        \item D
+        \item Java
+        \item Verilog
+        \item Wireless Communication
+        \item System Design
+        \item HTML
+        \item Javascript
+        \item ARM
+        \item FPGA
+        \item Wireless Power
+        \item Python
+        \item Wi-Fi
+        \item Git
+        \item Matlab
+    \stopitemize
+
+\stopsubject
+
+%%%%%%%%%%%%%%%%
+% Publications %
+%%%%%%%%%%%%%%%%
+\page
+\startsubject[title=PUBLICATIONS]
+
+{\bf LoRa Backscatter: Enabling the Vision of Ubiquitous Connectivity} \crlf
+Vamsi Talla, Mehrdad Hassar, Bryce Kellogg, Ali Najafi, Josh Smith, and Shyam Gollakota.\crlf
+{\it Ubicomp, 2017} \crlf
+
+{\bf Battery-free Cellphone} \crlf
+Vamsi Talla, Bryce Kellogg, Shyam Gollakota, and Josh Smith. \crlf
+{\it Ubicomp 2017} \crlf
+
+{\bf Inter-Technology Backscatter: Towards Internet Connectivity for Implanted Devices} \crlf
+Vikram Iyer, Vamsi Talla, Bryce Kellogg, Shyam Gollakota, and Josh Smith. \crlf
+{\it SIGCOMM 2016} \crlf
+
+{\bf Passive Wi-Fi: Bringing Low Power to Wi-Fi Transmissions} \crlf
+Bryce Kellogg, Vamsi Talla, Shyam Gollakota, and Josh Smith. \crlf
+{\it NSDI 2016 } \crlf
+
+{\bf Powering the Next Billion Devices With Wi-Fi} \crlf
+Vamsi Talla, Bryce Kellogg, Ben Ransford, Saman Naderiparizi, Shyam Gollakota, and Josh Smith. \crlf
+{\it ACM CoNext 2015} \crlf
+
+{\bf Wi-Fi Backscatter: Internet Connectivity for RF-Powered Devices} \crlf
+Bryce Kellogg, Aaron Parks, Shyam Gollakota, Josh Smith, and David Wetherall.  \crlf
+{\it SIGCOMM 2014} \crlf
+
+{\bf Bringing Gesture Recognition to All Devices} \crlf
+Bryce Kellogg, Vamsi Talla, and Shyam Gollakota. \crlf
+{\it NSDI, 2014} \crlf
 
 \stopsubject
 
