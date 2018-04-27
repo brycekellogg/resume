@@ -1,14 +1,12 @@
 % Set up Font
 \definefallbackfamily [mainface] [rm] [Noto Emoji] [range={miscellaneoussymbols,dingbats,miscellaneoussymbolsandpictographs}]
 \definefontfamily     [mainface] [rm] [LM Roman 10]
-\setupbodyfont        [mainface]
+\setupbodyfont        [mainface,11pt]
 \enabletrackers[fonts.missing]
 
-% Enable X11 Colors
-\usecolors[xwi]
 
-% Turn off page numbering
-\setuppagenumbering[location=]
+\usecolors[xwi]  % Enable X11 Colors
+\setuppagenumbering[location=]  % Turn off page numbering
 
 \setuplayout
   [header=0pt,
@@ -68,9 +66,9 @@
     {\bf University of Washington}
 
 \startitemize[symbol=0,leftmargin=0.5cm]
-    \item Master's of Science in Electrical Engineering   \hfill GPA: 3.84  \hfill June 2016
-    \item Bachelor's of Science in Electrical Engineering \hfill GPA: 3.86  \hfill June 2013
-    \item Bachelor's of Science in Computer Engineering   \hfill GPA: 3.86  \hfill June 2013
+    \item Master's of Science in Electrical Engineering   \hfill {\small GPA: 3.84} \hfill {\small June 2016}
+    \item Bachelor's of Science in Electrical Engineering \hfill {\small GPA: 3.86} \hfill {\small June 2013}
+    \item Bachelor's of Science in Computer Engineering   \hfill {\small GPA: 3.86} \hfill {\small June 2013}
 \stopitemize
 
 \stopsubsubsubject
@@ -85,13 +83,24 @@
     % Jeeva
     \startsubsubject[title={Jeeva Wireless \hfill {\small March 2015 - Current}}]
 
-        {\it Startup reimagining connectivity for ultra-low power IoT}
+        {\it Reimagining connectivity for ultra-low power IoT}
 
         {\bf Director of Engineering & Co-Founder }
         \startitemize
-            \item Designed products
-            \item FPGA implementation stuff
-            \item AWS Cloud Computing stuff
+
+            % Systems related
+            \item Designed scalable backscatter communication systems for IoT, smart homes, and industrial sensing
+            \item Performed extensive RF experiments both in an anechoic chamber and in real world scenarios
+
+            % Firmware related
+            \item Implemented Wi-Fi, BLE, and Zigbee protocol stacks in C and Verilog
+            \item Developed real time firmware for ARM SoCs using FreeRTOS and TI-RTOS
+            \item Performed signal processing and time/frequency domain analysis in Matlab and NumPy
+
+            % Management/Business related
+            \item Designed products to meet customer pain points in the IoT and wireless sensing space
+            \item Set deadlines and project priorities to ensure on time projects and deliverables
+            %\item Developed and presented detailed bussiness plans for identified target markets
         \stopitemize
 
     \stopsubsubject
@@ -100,14 +109,28 @@
     % UW Grad Student
     \startsubsubject[title={UW Mobile Systems Lab \hfill {\small June 2013 - May 2017}}]
 
-        {\it Does stuff with wireless power, low power communication}
+        {\it Leading research lab on backscatter, wireless power, and mobile systems}
 
         {\bf Graduate Researcher}
         \startitemize
-            \item Lead projects with undergrads
-            \item Hacked the Linux Kernel
-            \item Implemented Wi-Fi protocol
-            \item Wrote ultra-low power code
+
+            % RF Related
+            \item Designed custom software defined RF receivers using GNU Radio and USRPs
+            \item Developed backscatter communication systems for sensors and IoT applications
+            
+            % Management related
+            \item Managed research teams containing undergrad and graduate students with diverse skillsets
+            \item Presented technical and non-technical information at conferences and industry meetings
+            %\item Organized press releases containing video, print, and web news sources
+
+            % Embedded design related
+            \item Developed firmware for power harvesting platforms that used less than \unit{30 micro watt}
+            \item Optimized MSP430 and ARM firmware for low power embedded systems
+            \item Designed and benchmarked low power algorithms for communication and gesture recognition
+            
+            % Linux related
+            \item Hacked Linux kernel device drivers to perform obscure research functions
+            %\item Managed sets of multple Linux servers and desktops for research computation tasks
         \stopitemize
 
     \stopsubsubject
@@ -115,14 +138,20 @@
     % Xilinx Intern
     \startsubsubject[title={Xilinx Inc. \hfill {\small August 2011 - August 2012}}]
 
-        {\it Largest FPGA Manufacturer in the world}
+        {\it Largest FPGA manufacturer in the world}
 
         {\bf Test and Validation Intern}
         \startitemize
-            \item Developed Linux kernel device drivers for ARM peripherals.
-            \item Designed and deployed unit test and continuous integration framework ARM/FPGA platform.
-            \item Wrote Verilog unit tests for FPGA fabric
-            \item Debugged ARM microcontroller peripheral issues
+            % Linux related
+            \item Implemented Linux kernel device drivers for various custom ARM processor peripherals
+            \item Managed embedded Linux device tree files for Zynq SoC-FPGA platform
+            \item Spearheaded Xilinx's Platform Group's use of Yocto embedded Linux build platform
+
+            % Testing related
+            \item Designed and deployed unit test and continuous integration framework for the Zynq platform
+            \item Wrote Verilog and C tests for FPGA fabric, ARM core, and the interface between HW and SW
+            %\item Performed extensive debugging of ARM microcontroller peripheral and driver issues
+            %\item Developed quality control procedures for Zynq chips and realted drivers/software
         \stopitemize
 
     \stopsubsubject
@@ -134,22 +163,23 @@
 %%%%%%%%%%%
 \startsubject[title=TECHNICAL SKILLS]
 
-    \startitemize[columns,three]
+    \startitemize[columns,four]
         \item C/C++
         \item D
+        \item Python
         \item Java
         \item Verilog
-        \item Wireless Communication
-        \item System Design
+        \item Matlab
         \item HTML
-        \item Javascript
+        \item Circuit Design
+        \item Wireless Comms
+        \item System Design
         \item ARM
         \item FPGA
         \item Wireless Power
-        \item Python
         \item Wi-Fi
         \item Git
-        \item Matlab
+        \item Linux
     \stopitemize
 
 \stopsubject
