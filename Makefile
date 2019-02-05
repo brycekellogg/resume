@@ -1,6 +1,6 @@
 
 all: resume.tex
-	context resume.tex
+	@context resume.tex
 
 clean:
-	rm resume.pdf resume.log resume.tuc
+	@rm -f resume.pdf resume.log fonts.log resume.tuc
