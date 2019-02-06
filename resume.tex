@@ -1,8 +1,8 @@
-% Set up Font
-\definefallbackfamily [mainface] [rm] [Noto Emoji] [range={miscellaneoussymbols,dingbats,miscellaneoussymbolsandpictographs}]
-\definefontfamily     [mainface] [rm] [LM Roman 10]
-\setupbodyfont        [mainface,11pt]
-\enabletrackers[fonts.missing]
+% Configure fonts
+%
+% Use the Latin Modern Serif (rm) for body text, headers, and title.
+\definefontfamily [body] [rm] [LM Roman]  % Define rm variant to be Latin Modern Roman
+\setupbodyfont    [body,10pt]             % Setup body font
 
 
 \usecolors[xwi]  % Enable X11 Colors
@@ -20,28 +20,47 @@
     \paperheight-\topspace+\footerheight+\footerdistance-5cm\relax]
 
 % Configure title
+%
+% Title is centered, blue, bold,
+% and larger than body text.
 \setuphead[title][
     align=center,
     after={\blank[0cm]},
+    style=\tfd\bf,
     color=steelblue]
 
 % Configure section headers
+%
+% Section headers are blue, bold, and larger than body text. After a 
+% section header, we want a blue horizontal line and a blank space.
 \setuphead[subject][
-    after={\hrule \blank[small]},
-    style=bold,
+    after={\color[steelblue]{\hrule} \blank[medium]},
+    style=\tfc\bf,
     color=steelblue]
 
+% Configure Subsection headers
+%
+% ???
 \setuphead[subsubject][
     after={\blank[none]},
     before={\blank[medium]},
     style=bold]
 
 % Configure itemize
+\definesymbol[12][\utfchar{"025E6}]
 \setupitemize[1][packed][
     before={\blank[none]},
     leftmargin=0.7cm,
-    symbol=2]  % symbol 2 or 5
+    width=0.9em,
+    color=steelblue,
+    symbol=12]  % symbol 2 or 5
 
+\setupxtable[
+  frame=off,
+  option=stretch,
+  leftmargindistance=2.8em,
+  rightmargindistance=0em,
+  height=1.2em]
 
 \starttext
 
@@ -50,34 +69,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%
 \starttitle[title=Bryce Kellogg]
 \startalignment[middle]
-
-%TODO: hfill but with big margins
-
-\utfchar{"1F4F1} (425) 275-8979 \| \utfchar{"2709} kelloggbryce@gmail.com
-
+(425) 275-8979 \bullet brycekellogg@brycekellogg.com
 \stopalignment
 \stoptitle
 
 %%%%%%%%%%%%%
 % Education %
 %%%%%%%%%%%%%
-\startsubject[title=EDUCATION]
-
-    {\bf University of Washington}
-
-\startitemize[symbol=0,leftmargin=0.5cm]
-    \item Master's of Science in Electrical Engineering   \hfill {\small GPA: 3.84} \hfill {\small June 2016}
-    \item Bachelor's of Science in Electrical Engineering \hfill {\small GPA: 3.86} \hfill {\small June 2013}
-    \item Bachelor's of Science in Computer Engineering   \hfill {\small GPA: 3.86} \hfill {\small June 2013}
-\stopitemize
-
-\stopsubsubsubject
+\startsubject[title=Education]
+    \startsubsubject[title={University of Washington}]
+        \startxtable
+            \startxrow \startxcell Master's of Science in Electrical Engineering \stopxcell \startxcell {\small GPA: 3.84} \stopxcell \startxcell[align=flushright] {\small June 2016} \stopxcell \stopxrow
+            \startxrow \startxcell Bachelor of Science in Electrical Engineering \stopxcell \startxcell {\small GPA: 3.86} \stopxcell \startxcell[align=flushright] {\small June 2013} \stopxcell \stopxrow
+            \startxrow \startxcell Bachelor of Science in Computer Engineering   \stopxcell \startxcell {\small GPA: 3.86} \stopxcell \startxcell[align=flushright] {\small June 2013} \stopxcell \stopxrow
+        \stopxtable
+    \stopsubsubsubject
 \stopsubject
 
+            %\startxrow \hskip+1cm Master's of Science in Electrical Engineering \NC {\small GPA: 3.84} \NC {\small June 2016} \NR
+            %\startxrow \hskip+1cm Bachelor of Science in Electrical Engineering \NC {\small GPA: 3.86} \NC {\small June 2013} \NR
+            %\startxrow \hskip+1cm Bachelor of Science in Computer Engineering   \NC {\small GPA: 3.86} \NC {\small June 2013} \NR
 %%%%%%%%%%%%%%%%%%%
 % Work Experience %
 %%%%%%%%%%%%%%%%%%%
-\startsubject[title=INDUSTRY EXPERIENCE]
+\startsubject[title=Industry Experience]
 
 
     % Jeeva
@@ -161,7 +176,7 @@
 %%%%%%%%%%
 % Skills %
 %%%%%%%%%%%
-\startsubject[title=TECHNICAL SKILLS]
+\startsubject[title=Technical Skills]
 
     \startitemize[columns,four]
         \item C/C++
@@ -180,6 +195,7 @@
         \item Wi-Fi
         \item Git
         \item Linux
+        \item \LaTeX
     \stopitemize
 
 \stopsubject
@@ -187,38 +203,38 @@
 %%%%%%%%%%%%%%%%
 % Publications %
 %%%%%%%%%%%%%%%%
-\page
-\startsubject[title=PUBLICATIONS]
+%\page
+%\startsubject[title=Publications]
 
-{\bf LoRa Backscatter: Enabling the Vision of Ubiquitous Connectivity} \crlf
-Vamsi Talla, Mehrdad Hassar, Bryce Kellogg, Ali Najafi, Josh Smith, and Shyam Gollakota.\crlf
-{\it Ubicomp, 2017} \crlf
+%{\bf LoRa Backscatter: Enabling the Vision of Ubiquitous Connectivity} \crlf
+%Vamsi Talla, Mehrdad Hassar, Bryce Kellogg, Ali Najafi, Josh Smith, and Shyam Gollakota.\crlf
+%{\it Ubicomp, 2017} \crlf
 
-{\bf Battery-free Cellphone} \crlf
-Vamsi Talla, Bryce Kellogg, Shyam Gollakota, and Josh Smith. \crlf
-{\it Ubicomp 2017} \crlf
+%{\bf Battery-free Cellphone} \crlf
+%Vamsi Talla, Bryce Kellogg, Shyam Gollakota, and Josh Smith. \crlf
+%{\it Ubicomp 2017} \crlf
 
-{\bf Inter-Technology Backscatter: Towards Internet Connectivity for Implanted Devices} \crlf
-Vikram Iyer, Vamsi Talla, Bryce Kellogg, Shyam Gollakota, and Josh Smith. \crlf
-{\it SIGCOMM 2016} \crlf
+%{\bf Inter-Technology Backscatter: Towards Internet Connectivity for Implanted Devices} \crlf
+%Vikram Iyer, Vamsi Talla, Bryce Kellogg, Shyam Gollakota, and Josh Smith. \crlf
+%{\it SIGCOMM 2016} \crlf
 
-{\bf Passive Wi-Fi: Bringing Low Power to Wi-Fi Transmissions} \crlf
-Bryce Kellogg, Vamsi Talla, Shyam Gollakota, and Josh Smith. \crlf
-{\it NSDI 2016 } \crlf
+%{\bf Passive Wi-Fi: Bringing Low Power to Wi-Fi Transmissions} \crlf
+%Bryce Kellogg, Vamsi Talla, Shyam Gollakota, and Josh Smith. \crlf
+%{\it NSDI 2016 } \crlf
 
-{\bf Powering the Next Billion Devices With Wi-Fi} \crlf
-Vamsi Talla, Bryce Kellogg, Ben Ransford, Saman Naderiparizi, Shyam Gollakota, and Josh Smith. \crlf
-{\it ACM CoNext 2015} \crlf
+%{\bf Powering the Next Billion Devices With Wi-Fi} \crlf
+%Vamsi Talla, Bryce Kellogg, Ben Ransford, Saman Naderiparizi, Shyam Gollakota, and Josh Smith. \crlf
+%{\it ACM CoNext 2015} \crlf
 
-{\bf Wi-Fi Backscatter: Internet Connectivity for RF-Powered Devices} \crlf
-Bryce Kellogg, Aaron Parks, Shyam Gollakota, Josh Smith, and David Wetherall.  \crlf
-{\it SIGCOMM 2014} \crlf
+%{\bf Wi-Fi Backscatter: Internet Connectivity for RF-Powered Devices} \crlf
+%Bryce Kellogg, Aaron Parks, Shyam Gollakota, Josh Smith, and David Wetherall.  \crlf
+%{\it SIGCOMM 2014} \crlf
 
-{\bf Bringing Gesture Recognition to All Devices} \crlf
-Bryce Kellogg, Vamsi Talla, and Shyam Gollakota. \crlf
-{\it NSDI, 2014} \crlf
+%{\bf Bringing Gesture Recognition to All Devices} \crlf
+%Bryce Kellogg, Vamsi Talla, and Shyam Gollakota. \crlf
+%{\it NSDI, 2014} \crlf
 
-\stopsubject
+%\stopsubject
 
 \stoptext
 
