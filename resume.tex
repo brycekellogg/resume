@@ -2,7 +2,7 @@
 %
 % Use the Latin Modern Serif (rm) for body text, headers, and title.
 \definefontfamily [body] [rm] [LM Roman]  % Define rm variant to be Latin Modern Roman
-\setupbodyfont    [body,10pt]             % Setup body font
+\setupbodyfont    [body,11pt]             % Setup body font
 
 
 \usecolors[xwi]  % Enable X11 Colors
@@ -17,7 +17,7 @@
    width=fit,
    % margin bottom of text to paper
    height=\dimexpr
-    \paperheight-\topspace+\footerheight+\footerdistance-5cm\relax]
+    \paperheight-\topspace+\footerheight+\footerdistance-1cm\relax]
 
 % Configure title
 %
@@ -86,14 +86,10 @@
     \stopsubsubsubject
 \stopsubject
 
-            %\startxrow \hskip+1cm Master's of Science in Electrical Engineering \NC {\small GPA: 3.84} \NC {\small June 2016} \NR
-            %\startxrow \hskip+1cm Bachelor of Science in Electrical Engineering \NC {\small GPA: 3.86} \NC {\small June 2013} \NR
-            %\startxrow \hskip+1cm Bachelor of Science in Computer Engineering   \NC {\small GPA: 3.86} \NC {\small June 2013} \NR
 %%%%%%%%%%%%%%%%%%%
 % Work Experience %
 %%%%%%%%%%%%%%%%%%%
 \startsubject[title=Industry Experience]
-
 
     % Jeeva
     \startsubsubject[title={Jeeva Wireless \hfill {\small March 2015 - Current}}]
@@ -103,14 +99,14 @@
         {\bf Director of Engineering & Co-Founder }
         \startitemize
 
-            % Systems related
-            \item Designed scalable backscatter communication systems for IoT, smart homes, and industrial sensing
-            \item Performed extensive RF experiments both in an anechoic chamber and in real world scenarios
-
             % Firmware related
             \item Implemented Wi-Fi, BLE, and Zigbee protocol stacks in C and Verilog
             \item Developed real time firmware for ARM SoCs using FreeRTOS and TI-RTOS
             \item Performed signal processing and time/frequency domain analysis in Matlab and NumPy
+
+            % Systems related
+            \item Designed scalable backscatter communication systems for IoT, smart homes, and industrial sensing
+            \item Performed extensive RF experiments both in an anechoic chamber and in real world scenarios
 
             % Management/Business related
             \item Designed products to meet customer pain points in the IoT and wireless sensing space
@@ -130,13 +126,8 @@
         \startitemize
 
             % RF Related
-            \item Designed custom software defined RF receivers using GNU Radio and USRPs
             \item Developed backscatter communication systems for sensors and IoT applications
-            
-            % Management related
-            \item Managed research teams containing undergrad and graduate students with diverse skillsets
-            \item Presented technical and non-technical information at conferences and industry meetings
-            %\item Organized press releases containing video, print, and web news sources
+            \item Designed custom software defined RF receivers using GNU Radio and USRPs
 
             % Embedded design related
             \item Developed firmware for power harvesting platforms that used less than \unit{30 micro watt}
@@ -145,7 +136,13 @@
             
             % Linux related
             \item Hacked Linux kernel device drivers to perform obscure research functions
-            %\item Managed sets of multple Linux servers and desktops for research computation tasks
+            \item Managed sets of multple Linux servers and desktops for research computation tasks
+
+            % Management related
+            \item Managed research teams containing undergrad and graduate students with diverse skillsets
+            \item Presented technical and non-technical information at conferences and industry meetings
+            \item Organized press releases containing video, print, and web news sources
+
         \stopitemize
 
     \stopsubsubject
@@ -160,13 +157,17 @@
             % Linux related
             \item Implemented Linux kernel device drivers for various custom ARM processor peripherals
             \item Managed embedded Linux device tree files for Zynq SoC-FPGA platform
-            \item Spearheaded Xilinx's Platform Group's use of Yocto embedded Linux build platform
+            \item Spearheaded Xilinx's Platform Group's use of the Yocto embedded Linux build platform
 
             % Testing related
             \item Designed and deployed unit test and continuous integration framework for the Zynq platform
             \item Wrote Verilog and C tests for FPGA fabric, ARM core, and the interface between HW and SW
-            %\item Performed extensive debugging of ARM microcontroller peripheral and driver issues
-            %\item Developed quality control procedures for Zynq chips and realted drivers/software
+            \item Performed extensive debugging of ARM microcontroller peripheral and driver issues
+            \item Developed quality control procedures for Zynq chips and related drivers/software
+
+            % Teamwork related
+            \item Collaborated on an international team to develop robust testing procedures 
+            \item Presented detailed project pitches outlining scope, use cases, and implementation plan
         \stopitemize
 
     \stopsubsubject
@@ -180,20 +181,22 @@
 
     \startitemize[columns,four]
         \item C/C++
-        \item D
+        %\item D
         \item Python
         \item Java
         \item Verilog
         \item Matlab
-        \item HTML
-        \item Circuit Design
-        \item Wireless Comms
-        \item System Design
-        \item ARM
-        \item FPGA
-        \item Wireless Power
-        \item Wi-Fi
         \item Git
+        %\item HTML
+        \item Digital Circuit Design
+        \item Wireless Modulations
+        \item FreeRTOS
+        \item Wi-Fi/BLE/Zigbee
+        %\item System Design
+        %\item ARM
+        %\item FPGA
+        %\item Wireless Power
+        %\item Wi-Fi
         \item Linux
         \item \LaTeX
     \stopitemize
