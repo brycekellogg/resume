@@ -34,6 +34,7 @@
 % Section headers are blue, bold, and larger than body text. After a
 % section header, we want a blue horizontal line and a blank space.
 \setuphead[subject][
+    before={\blank[0.4cm]},
     after={\color[steelblue]{\hrule} \blank[medium]},
     style=\tfc\bf,
     color=steelblue]
@@ -79,9 +80,9 @@
 \startsubject[title=Education]
     \startsubsubject[title={University of Washington}]
         \startxtable
-            \startxrow \startxcell Master's of Science in Electrical Engineering \stopxcell \startxcell {\small GPA: 3.84} \stopxcell \startxcell[align=flushright] {\small June 2016} \stopxcell \stopxrow
-            \startxrow \startxcell Bachelor of Science in Electrical Engineering \stopxcell \startxcell {\small GPA: 3.86} \stopxcell \startxcell[align=flushright] {\small June 2013} \stopxcell \stopxrow
-            \startxrow \startxcell Bachelor of Science in Computer Engineering   \stopxcell \startxcell {\small GPA: 3.86} \stopxcell \startxcell[align=flushright] {\small June 2013} \stopxcell \stopxrow
+            \startxrow \startxcell Master's of Science in Electrical Engineering \stopxcell  \startxcell[align=flushright] {\small June 2016} \stopxcell \stopxrow
+            \startxrow \startxcell Bachelor of Science in Electrical Engineering \stopxcell  \startxcell[align=flushright] {\small June 2013} \stopxcell \stopxrow
+            \startxrow \startxcell Bachelor of Science in Computer Engineering   \stopxcell  \startxcell[align=flushright] {\small June 2013} \stopxcell \stopxrow
         \stopxtable
     \stopsubsubsubject
 \stopsubject
@@ -91,8 +92,37 @@
 %%%%%%%%%%%%%%%%%%%
 \startsubject[title=Industry Experience]
 
+    % TUI
+    \startsubsubject[title={Tethers Unlimited \hfill {\small September 2021 - Current}}]
+
+        {\it Aerospace component provider specializing in communications & robotics}
+
+        {\bf Senior Embedded Software Lead}
+        \startitemize
+
+            % Management/Lead related
+            \item Lead a team of software engineers in developing mission critical software for satellite payloads
+            \item Worked with Project Managers to ensure successful execution of the schedule given available resources
+
+            % Architecture Related
+            \item Designed full software architecture for a multi-processor satellite payload to meet mission requirements
+
+            % Firmware Related
+            \item Wrote device drivers in C for custom hardware & FPGA peripherals
+            \item Implemented ROS2 based system for a space based robotic arm.
+            \item Developed \quotation{FlatSat} test procedures & performed testing to validate software design met requirements
+
+            % Process Related
+            \item Spearheaded adoption of automated unit testing to increase reliability and reduce regressions
+            \item Drove standardization of build procedure to make onboarding and collaboration more efficient
+            \item Ensured quality code & design documentation through mentoring, review feedback, & process improvements
+
+        \stopitemize
+
+    \stopsubsubject
+
     % Jeeva
-    \startsubsubject[title={Jeeva Wireless \hfill {\small March 2015 - Current}}]
+    \startsubsubject[title={Jeeva Wireless \hfill {\small March 2015 - September 2021}}]
 
         {\it Reimagining connectivity for ultra-low power IoT}
 
